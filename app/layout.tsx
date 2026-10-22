@@ -23,33 +23,78 @@ const oswald = Oswald({
   weight: ["500", "600", "700"],
 })
 
+const fullTitle = `${site.name} (${site.shortName}) | ${site.host.short}`
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} (${site.shortName})`,
+    default: fullTitle,
     template: `%s | ${site.shortName}`,
   },
   description: site.description,
+  applicationName: site.shortName,
+  authors: [
+    {
+      name: `${site.host.department}, ${site.host.university}`,
+      url: site.url,
+    },
+  ],
+  creator: `${site.host.department}, ${site.host.university}`,
+  publisher: `${site.host.department}, ${site.host.university}`,
+  category: "science",
+  keywords: [
+    "NJPAP",
+    "Nigeria Journal of Pure and Applied Physics",
+    "physics journal",
+    "Nigeria",
+    "FUTA",
+    "Federal University of Technology Akure",
+    "Department of Physics FUTA",
+    "pure and applied physics",
+    "peer-reviewed journal",
+    "call for papers",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
-  keywords: [
-    "NJPAP",
-    "physics journal",
-    "Nigeria",
-    "FUTA",
-    "pure and applied physics",
-    "peer-reviewed",
-    "call for papers",
-  ],
   openGraph: {
-    title: `${site.name} (${site.shortName})`,
-    description: site.description,
-    siteName: site.shortName,
     type: "website",
     locale: "en_NG",
+    url: site.url,
+    siteName: `${site.name} (${site.shortName})`,
+    title: fullTitle,
+    description: site.description,
+    images: [
+      {
+        url: "/screenshot.png",
+        width: 1346,
+        height: 648,
+        alt: `${site.name} (${site.shortName}) – Hosted by ${site.host.short}`,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: fullTitle,
+    description: site.description,
+    images: ["/screenshot.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 }
 

@@ -18,7 +18,7 @@ export const site = {
     "Nigeria Journal of Pure and Applied Physics (NJPAP) publishes papers of the highest quality and significance in specific areas of physics, pure and applied. The journal content reflects core physics disciplines, but is also open to a broad range of topics whose central theme falls within the bounds of physics.",
   about:
     "Nigeria Journal of Pure and Applied Physics (NJPAP) is a peer-reviewed journal dedicated to advancing the frontiers of physics through the publication of high-quality research. The journal promotes the dissemination of innovative theories, methodologies, and findings that contribute to scientific knowledge and technological development.",
-  url: "https://www.njpap.futa.edu.ng",
+  url: "https://njpap.vercel.app",
   submissionUrl: "https://forms.gle/PufTc8qPHDVVwAoc6",
   frequency: "Quarterly",
   fees: {
